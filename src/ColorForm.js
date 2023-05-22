@@ -1,0 +1,21 @@
+import React , { useState } from "react";
+
+function ColorForm (props) {
+    let [ input , setInput ] = useState('')
+    
+    const handleSumbit = (e) => {
+        e.preventDefault()
+        props.addColor(input)
+    }
+
+    return(
+        <div>
+            <form onSubmit={handleSumbit}>
+                <input type="text" onChange={(e) => setInput(e.target.value)} />
+                <button type="submit">Submit !</button>
+            </form>
+        </div>
+    )
+}
+
+export default ColorForm
